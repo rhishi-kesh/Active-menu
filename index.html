@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Active sectio menu</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<body>
+    <header>
+        <div class="nav-wrapper">
+            <div class="logo-container">
+                <img class="logo" src="https://i.imgur.com/gea725J.png" alt="Logo">
+            </div>
+            <nav>
+                <input class="hidden" type="checkbox" id="menuToggle">
+                <label class="menu-btn" for="menuToggle">
+                    <div class="menu"></div>
+                    <div class="menu"></div>
+                    <div class="menu"></div>
+                </label>
+                <div class="nav-container">
+                    <ul class="nav-tabs">
+                        <li class="nav-tab active home"><a href="#home">Home</a></li>
+                        <li class="nav-tab products"><a href="#products">Products</a></li>
+                        <li class="nav-tab Service"><a href="#Service">Services</a></li>
+                        <li class="nav-tab Faq"><a href="#Faq">FAQ</a></li>
+                        <li class="nav-tab contact"><a href="#contact">Contact</a></li>
+                        <li class="nav-tab careers"><a href="#careers">Careers</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <section class="home" id="home">
+	        	<h2>HOME</h2>
+        </section>
+    </header>
+    <section class="products" id="products">
+    	<div>
+    		<h2>Products</h2>
+    	</div>
+    </section>
+    <section class="Service" id="Service">
+    	<div>
+    		<h2>Service</h2>
+    	</div>
+    </section>
+    <section class="Faq" id="Faq">
+    	<div>
+    		<h2>Faq</h2>
+    	</div>
+    </section>
+    <section class="contact" id="contact">
+    	<div>
+    		<h2>contact</h2>
+    	</div>
+    </section>
+    <section class="careers" id="careers">
+    	<div>
+    		<h2>careers</h2>
+    	</div>
+    </section>
+
+
+
+
+
+
+    <script type="text/javascript">
+    	const sections = document.querySelectorAll('section');
+    	const navLi = document.querySelectorAll('nav .nav-container .nav-tabs li');
+    	window.addEventListener('scroll', ()=>{
+    		let current = "";
+    		sections.forEach(section =>{
+    			const sectiontop = section.offsetTop;
+    			const sectionHeight = section.clientHeight;
+    			if(pageYOffset >= sectiontop - (sectionHeight)/3){
+    				 current = section.getAttribute('id');
+    			}
+    		})
+    		navLi.forEach(li=>{
+    			li.classList.remove('active');
+    			if (li.classList.contains(current)){
+    				li.classList.add('active');
+    			}
+    		})
+    	})
+    </script>
+</body>
+</body>
+</html>
